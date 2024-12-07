@@ -41,13 +41,16 @@ public class MyString {
      * @return true is str1 is a subset of str2, false otherwise
      */
     public static boolean subsetOf(String str1, String str2) {
-         boolean isSub = true;
+         boolean isSub = false;
+         if (str1.equals("")) {
+            return true;
+         }
          for (int i = 0; i < str1.length(); i++) {
             char c = str1.charAt(i);
             int cTimes = countChar(str1, c);
             if (countChar(str2, c) == cTimes) {
                 isSub = true;
-            } else if (countChar(str2, c) == 0) {
+            } else if (countChar(str2, c) < cTimes) {
                 isSub = false;
                 break;
             }

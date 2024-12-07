@@ -76,6 +76,7 @@ public class Scrabble {
 			int addToScore = SCRABBLE_LETTER_VALUES[indexInArr];
 			score += addToScore;
 		}
+		score = score * word.length();
 		if (word.length() == 10) {
 			score += 50;
 		}
