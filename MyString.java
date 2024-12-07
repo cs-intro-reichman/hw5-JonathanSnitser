@@ -45,10 +45,13 @@ public class MyString {
          for (int i = 0; i < str1.length(); i++) {
             char c = str1.charAt(i);
             int cTimes = countChar(str1, c);
-            if (countChar(str2, c) != cTimes) {
+            if (countChar(str2, c) == cTimes) {
+                isSub = true;
+            } else if (countChar(str2, c) == 0) {
                 isSub = false;
                 break;
             }
+
          }
         return isSub;
     }
@@ -68,10 +71,10 @@ public class MyString {
         }
         for (int i = 0; i < str.length() - 1; i++) {
             char c = str.charAt(i);
-            newStr = newStr + c + " ";
+            newStr = newStr + " " + c;
         }
         char last = str.charAt(str.length() - 1);
-        newStr = newStr + last;
+        newStr = newStr + " " + last;
         return newStr;
     }
   
